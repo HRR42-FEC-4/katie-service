@@ -19,3 +19,4 @@ const Review = db_reviews.define('review', {
 Review.belongsTo(Products, { as: "product", foreignKey: "product_id" });
 
 module.exports = Review;
+

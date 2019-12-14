@@ -53,3 +53,4 @@ db_reviews.sync()
   .catch(error => {
     console.log(error);
   })
+
