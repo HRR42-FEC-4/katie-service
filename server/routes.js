@@ -38,6 +38,16 @@ router.get('/reviews/:productId/:rating', (req, res) => {
     })
 });
 
+router.get('/reviews/:productId/ratings_overview', (req, res) => {
+  Review.findAll({
+    where: { product_id: req.params.productId },
+    attributes: ['id', 'rating']
+  })
+  .then(ratings => {
+    res.send(ratings);
+  })
+});
+
 router.patch('/reviews/:reviewId/:thumb', (req, res) => {
   Review.findOne({
     where: {
@@ -45,7 +55,7 @@ router.patch('/reviews/:reviewId/:thumb', (req, res) => {
     }
   })
     .then(review => {
-      review.increment(req.params.thumb)
+      review.increment(req.params.thumb);
     })
     .then(() => {
       res.sendStatus(200);
@@ -56,3 +66,4 @@ router.patch('/reviews/:reviewId/:thumb', (req, res) => {
 })
 
 module.exports = router;
+
