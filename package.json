@@ -11,7 +11,7 @@
     "test": "jest --detectOpenHandles",
     "build": "webpack -d",
     "build-dev": "webpack -d --watch",
-    "build-css": "node-sass --watch --include-path scss client/dist/main.scss client/dist/style.css"
+    "build-css": "node-sass --watch --include-path scss client/public/main.scss client/public/style.css"
   },
   "dependencies": {
     "axios": "^0.19.0",
