@@ -1,5 +1,6 @@
 import React from 'react';
 import RatingsGraph from './RatingsGraph.jsx';
+import StarRating from './StarRating.jsx'
 
 const RatingsOverview = (props) => {
   let breakdown = JSON.parse(props.average);
@@ -11,9 +12,14 @@ const RatingsOverview = (props) => {
     count += breakdown[key];
   };
 
+  let averageRating = (sum / count).toFixed(1);
+
   return (
     <div>
-      <div class='average-rating'>{(sum / count).toFixed(1)}</div>
+      <div class='graph-heading'>
+        <StarRating rating={Math.floor(averageRating)}/>
+        <span class='average-rating'>{averageRating}</span>
+      </div>
       <div class='ratings-graph'>
         <div class='row graph-row'>
           {Object.keys(breakdown).reverse().map(rating => {
