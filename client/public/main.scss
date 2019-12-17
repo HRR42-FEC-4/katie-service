@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,400,500&display=swap');
 @import './resets';
 
 $headline: #082a4c;
 $comments: #4a4a4a;
 $info-text: #8a8a8a;
 $font-weights: (
+  ''
   'regular': 400,
   'light': 200
 );
@@ -23,6 +24,7 @@ $font-weights: (
   margin-top: 40px;
   margin-bottom: 40px;
   width: 90%;
+  display: 'none';
 
   .accordion-header {
     font-size: 16px;
@@ -38,8 +40,8 @@ $font-weights: (
       border-top: 1px solid #f8f8f8;
       padding-top: 10px;
       padding-bottom: 10px;
-      padding-right: 55px;
       padding-left: 55px;
+      padding-right: 55px;
 
       .review-headline {
         color: $headline;
@@ -67,7 +69,7 @@ $font-weights: (
       .review-date {
         color: $info-text;
         font-size: 12px;
-        margin-right: 10px;
+        margin-right: 12px;
       }
     }
 
@@ -112,11 +114,12 @@ $font-weights: (
 .progress {
   margin-bottom: 10px;
   background-color: #f1f9ff !important;
-  width: 25%;
+  height: 30px;
+  width: 100%;
 }
 
 .progress-bar-blue {
-  height: 25px;
+  height: 30px;
   background-color: #9ec9eb !important;
 }
 
@@ -125,11 +128,21 @@ $font-weights: (
 }
 
 .star-rating-text {
-  font-size: 9px;
+  font-size: 8px;
   color: #3f5978;
+  float: right !important;
+  line-height: 30px;
+}
+
+.rating-text-right {
+  font-size: 8px;
+  color: #3f5978;
+  float: left !important;
+  line-height: 30px;
 }
 
 .average-rating {
+  margin-left: 10px;
   background-color: #f1f9ff;
   justify-content: center;
   font-size: 17px;
@@ -139,4 +152,8 @@ $font-weights: (
   width: 40px;
   border-radius: 50%;
   padding: 5px;
+}
+
+.graph-heading {
+  margin-bottom: 15px;
 }
